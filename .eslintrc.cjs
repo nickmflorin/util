@@ -85,10 +85,15 @@ const TS_BASE_RULES = {
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["plugin:@typescript-eslint/recommended", "prettier"],
-  plugins: ["prettier"],
+  extends: ["plugin:@typescript-eslint/recommended", "prettier", "plugin:import/recommended"],
+  plugins: ["prettier", "import"],
   rules: BASE_RULES,
   ignorePatterns: ["!.*", "package.json", "package-lock.json", "node_modules/*"],
+  settings: {
+    "import/resolver": {
+      typescript: {},
+    },
+  },
   overrides: [
     {
       files: ["**/*.ts", "**/*.tsx"],

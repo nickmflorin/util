@@ -1,4 +1,4 @@
-import { withNextConfig } from "./jest.config.base";
+import { withBaseConfig } from "./jest.config.base";
 
 /**
  * Defines the Jest "projects" that Jest will run in parallel, isolated threads.
@@ -7,12 +7,10 @@ import { withNextConfig } from "./jest.config.base";
  * configurations.  These projects are associated with scoped configuration files, with are denoted
  * as either jest-*.config.ts or jest.config.ts.
  */
-export default withNextConfig(__dirname, {
+export default withBaseConfig(__dirname, {
   projects: [
-    "<rootDir>/src/tests/components/jest.config.ts",
-    "<rootDir>/src/tests/unit/jest.config.ts",
+    "<rootDir>/src/__tests__/jest.config.ts",
     "<rootDir>/jest.config.eslint.ts",
     "<rootDir>/jest.config.prettier.ts",
-    "<rootDir>/jest.config.stylelint.ts",
   ],
 });
